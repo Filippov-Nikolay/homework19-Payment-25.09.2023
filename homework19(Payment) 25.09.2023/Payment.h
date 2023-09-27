@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <string>
 
@@ -17,27 +17,27 @@ class Payment {
 	int accruedAmount;
 	int amountWithheld;
 public:
-	// Конструктор
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	Payment();
 	Payment(string, string, string, int, int, float, int, int);
 
-	void Input(); // Ввод с клавиатуры
-	void Print() const; // Вывод
+	void Input(); // Р’РІРѕРґ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
+	void Print() const; // Р’С‹РІРѕРґ
 
 
-	// Расчеты 
-	// Вычисление начисленной суммы
+	// Р Р°СЃС‡РµС‚С‹ 
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ РЅР°С‡РёСЃР»РµРЅРЅРѕР№ СЃСѓРјРјС‹
 	float CalculationOfAccruedAmount();
-	// Вычисление удержанной суммы
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ СѓРґРµСЂР¶Р°РЅРЅРѕР№ СЃСѓРјРјС‹
 	float CalculationOfTheAmountWithheld();
-	// Вычисление суммы на руки
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ СЃСѓРјРјС‹ РЅР° СЂСѓРєРё
 	float SumNetSalary();
-	// Вычисление стажа
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ СЃС‚Р°Р¶Р°
 	int CalculationOfLengthOfService();
 
 
-	// Аксессоры
-	// Геттеры
+	// РђРєСЃРµСЃСЃРѕСЂС‹
+	// Р“РµС‚С‚РµСЂС‹
 	string GetFisrtName() const;
 	string GetLastName() const;
 	string GetSurName() const;
@@ -51,7 +51,7 @@ public:
 	int GetAccruedAmount() const;
 	int GetAmountWithheld() const;
 
-	// Сеттеры
+	// РЎРµС‚С‚РµСЂС‹
 	void SetFisrtName(string);
 	void SetLastName(string);
 	void SetSurName(string);

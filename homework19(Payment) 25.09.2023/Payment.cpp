@@ -1,9 +1,9 @@
-#include "Payment.h"
+п»ї#include "Payment.h"
 
 using namespace std;
 
 
-// Конструкторы
+// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂС‹
 Payment::Payment() {
 	firstName = nullptr;
 	lastName = nullptr;
@@ -28,51 +28,51 @@ Payment::Payment(string fn, string ln, string sr, int yoetw, int s, float bp, in
 }
 
 
-// Ввод с клавиатуры
+// Р’РІРѕРґ СЃ РєР»Р°РІРёР°С‚СѓСЂС‹
 void Payment::Input() {
-	cout << "Введите имя: ";
+	cout << "Р’РІРµРґРёС‚Рµ РёРјСЏ: ";
 	cin >> firstName;
 
-	cout << "Введите фамилию: ";
+	cout << "Р’РІРµРґРёС‚Рµ С„Р°РјРёР»РёСЋ: ";
 	cin >> lastName;
 
-	cout << "Введите отчество: ";
+	cout << "Р’РІРµРґРёС‚Рµ РѕС‚С‡РµСЃС‚РІРѕ: ";
 	cin >> surName;
 
-	cout << "Введите год поступления: ";
+	cout << "Р’РІРµРґРёС‚Рµ РіРѕРґ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ: ";
 	cin >> yearOfEntryToWork;
 
-	cout << "Введите оклад: ";
+	cout << "Р’РІРµРґРёС‚Рµ РѕРєР»Р°Рґ: ";
 	cin >> salary;
 
-	cout << "Введите надбавку к окладу (если есть): ";
+	cout << "Р’РІРµРґРёС‚Рµ РЅР°РґР±Р°РІРєСѓ Рє РѕРєР»Р°РґСѓ (РµСЃР»Рё РµСЃС‚СЊ): ";
 	cin >> bonusPercentage;
 
-	cout << "Кол-во отработаных дней в текущем месяце: ";
+	cout << "РљРѕР»-РІРѕ РѕС‚СЂР°Р±РѕС‚Р°РЅС‹С… РґРЅРµР№ РІ С‚РµРєСѓС‰РµРј РјРµСЃСЏС†Рµ: ";
 	cin >> numberOfDaysWorkedPerMonth;
 
-	cout << "Кол-во раб. дней: ";
+	cout << "РљРѕР»-РІРѕ СЂР°Р±. РґРЅРµР№: ";
 	cin >> numberOfWorkingDaysPerMonth;
 }
-// Вывод
+// Р’С‹РІРѕРґ
 void Payment::Print() const {
-	cout << "Фамилия: " << lastName << endl;
-	cout << "Имя: " << firstName << endl;
-	cout << "Отчество: " << surName << endl;
-	cout << "Год поступления: " << yearOfEntryToWork << endl;
-	cout << "Оклад: " << salary << endl;
-	cout << "Надбавка к окладу: " << bonusPercentage << endl;
-	cout << "Кол-во отработаных дней в текущем месяце: " << numberOfDaysWorkedPerMonth << endl;
-	cout << "Кол-во раб. дней: " << numberOfWorkingDaysPerMonth << endl;
+	cout << "Р¤Р°РјРёР»РёСЏ: " << lastName << endl;
+	cout << "РРјСЏ: " << firstName << endl;
+	cout << "РћС‚С‡РµСЃС‚РІРѕ: " << surName << endl;
+	cout << "Р“РѕРґ РїРѕСЃС‚СѓРїР»РµРЅРёСЏ: " << yearOfEntryToWork << endl;
+	cout << "РћРєР»Р°Рґ: " << salary << endl;
+	cout << "РќР°РґР±Р°РІРєР° Рє РѕРєР»Р°РґСѓ: " << bonusPercentage << endl;
+	cout << "РљРѕР»-РІРѕ РѕС‚СЂР°Р±РѕС‚Р°РЅС‹С… РґРЅРµР№ РІ С‚РµРєСѓС‰РµРј РјРµСЃСЏС†Рµ: " << numberOfDaysWorkedPerMonth << endl;
+	cout << "РљРѕР»-РІРѕ СЂР°Р±. РґРЅРµР№: " << numberOfWorkingDaysPerMonth << endl;
 }
 
 
-// Вычисление начисленной суммы
+// Р’С‹С‡РёСЃР»РµРЅРёРµ РЅР°С‡РёСЃР»РµРЅРЅРѕР№ СЃСѓРјРјС‹
 float Payment::CalculationOfAccruedAmount() {
 	accruedAmount = salary + (salary * bonusPercentage / 100);
 	return accruedAmount;
 }
-// Вычисление удержанной суммы
+// Р’С‹С‡РёСЃР»РµРЅРёРµ СѓРґРµСЂР¶Р°РЅРЅРѕР№ СЃСѓРјРјС‹
 float Payment::CalculationOfTheAmountWithheld() {
 	int pensionFund = 1;
 	int incomeTax = 13;
@@ -80,19 +80,19 @@ float Payment::CalculationOfTheAmountWithheld() {
 	amountWithheld = (accruedAmount * ((float)incomeTax / 100.0)) + ((float)salary * 1 / 100.0);
 	return amountWithheld;
 }
-// Вычисление "чистой" ЗП
+// Р’С‹С‡РёСЃР»РµРЅРёРµ "С‡РёСЃС‚РѕР№" Р—Рџ
 float Payment::SumNetSalary() {
 	return accruedAmount - amountWithheld;
 }
-// Вычисление стажа
+// Р’С‹С‡РёСЃР»РµРЅРёРµ СЃС‚Р°Р¶Р°
 int Payment::CalculationOfLengthOfService() {
 	int thisYear;
 
 	do {
-		cout << "Введите текущий год: ";
+		cout << "Р’РІРµРґРёС‚Рµ С‚РµРєСѓС‰РёР№ РіРѕРґ: ";
 		cin >> thisYear;
 		if (thisYear < yearOfEntryToWork) {
-			cout << "Вы ввели неверный год!" << endl;
+			cout << "Р’С‹ РІРІРµР»Рё РЅРµРІРµСЂРЅС‹Р№ РіРѕРґ!" << endl;
 		}
 	} while (thisYear < yearOfEntryToWork);
 
@@ -100,8 +100,8 @@ int Payment::CalculationOfLengthOfService() {
 }
 
 
-// Аксессоры
-// Геттеры
+// РђРєСЃРµСЃСЃРѕСЂС‹
+// Р“РµС‚С‚РµСЂС‹
 string Payment::GetFisrtName() const {
 	return firstName;
 }
@@ -137,7 +137,7 @@ int Payment::GetAmountWithheld() const {
 	return amountWithheld;
 }
 
-// Сеттеры
+// РЎРµС‚С‚РµСЂС‹
 void Payment::SetFisrtName(string fn) {
 	firstName = fn;
 }
